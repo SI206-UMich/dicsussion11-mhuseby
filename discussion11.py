@@ -82,6 +82,8 @@ def add_pets_from_json(filename, cur, conn):
 # TASK 3
 # CODE TO OUTPUT NON-AGGRESSIVE PETS
 def non_aggressive_pets(aggressiveness, cur, conn):
+    cur.execute("SELECT name FROM Patients WHERE aggressiveness <= ?", (aggressiveness))
+    rows = cur.fetchall()
     
     pass
 
